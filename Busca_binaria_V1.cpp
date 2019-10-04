@@ -14,7 +14,7 @@ int Gera_vetor(int* vetor, int tam){
     }
     cout << "\n";
 }
-int organiza_vetor(int* vetor,int tam){
+int Organiza_vetor(int* vetor,int tam){
 
     int organizador;
     //Gera_vetor(int* vetor,int tam);
@@ -35,20 +35,20 @@ int organiza_vetor(int* vetor,int tam){
 }
 
 int Busca_binaria(int* vetor,int tam, int buscado){
-    int inicio=vetor[0];
+    int inicio=0;
     int meio;
-    int fim=vetor[tam-1];
+    int fim=tam-1;
 
-    for(int i=0;i<tam;i++){
+    while(inicio<=fim){
         meio=(inicio+fim)/2;
-        if(buscado==meio){
+        if(buscado==vetor[meio]){
             return meio;
         }
-        else if(buscado<meio){
+        else if(buscado<vetor[meio]){
             fim = meio - 1;
         }
-        else if(buscado>meio){
-            inicio = meio +1;
+        else if(buscado>vetor[meio]){
+            inicio = meio + 1;
         }
     }
     return -1;
@@ -62,16 +62,19 @@ int main(){
     cout << "digite os numeros do seu vetor:\n";
     Gera_vetor(vetor,tam);
     cout << "vetor organizado:\n";
-    organiza_vetor(vetor,tam);
+    Organiza_vetor(vetor,tam);
     cout <<"digite o valor a ser buscado:\n";
     int buscado;
     cin >>buscado;
+    int z;
+    z = Busca_binaria(vetor,tam,buscado);
     if(Busca_binaria(vetor,tam,buscado)!=-1){
-        cout<<"valor encontrado na posicao:"<<Busca_binaria+1;
+        cout<<"valor encontrado na posicao:"<<z+1;
     }
     else{
         cout<<"nao esta no vetor";
     }
+
     return 0;
 
 }
