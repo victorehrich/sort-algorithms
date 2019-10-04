@@ -3,12 +3,14 @@
 
 using namespace std;
 
+//Função utilizada para gerar o vetor
 int Gera_vetor(int* vetor, int tam){
     int i;
     for(i=0;i<tam;i++){
         cin >> vetor[i];
     }
 }
+//função que vai buscar o vetor
 int Busca(int vetor[],int tam, int buscado){
 
     int i;
@@ -29,6 +31,7 @@ int Busca(int vetor[],int tam, int buscado){
         return -1;
     }
 }
+//função principal, para passar os parametros
 int main(){
 
     int tam;
