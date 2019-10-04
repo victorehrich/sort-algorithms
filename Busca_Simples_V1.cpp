@@ -9,6 +9,11 @@ int Gera_vetor(int* vetor, int tam){
     for(i=0;i<tam;i++){
         cin >> vetor[i];
     }
+    cout << "| ";
+    for(i=0;i<tam;i++){
+        cout << vetor[i]<< " | ";
+    }
+    cout << "\n";
 }
 //função que vai buscar o vetor
 int Busca(int vetor[],int tam, int buscado){
