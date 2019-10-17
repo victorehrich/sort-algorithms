@@ -55,9 +55,16 @@ void Tira_fila(int* vetor,int tam,int* tras, int* frente){
         if(*frente>*tras){
             cout<<"fila vazia\n";
         }
-        else{
+        /*else{
             vetor[*frente]=0;
             *frente= *frente+1;
+            Imprime_fila(vetor,tam);
+        }*/
+        else{
+            cout<<"O valor: "<<vetor[*frente]<<" foi removido\n";
+            for(int i= 0;i < *tras+1;i++){
+                vetor[i]=vetor[i+1];
+            }
             Imprime_fila(vetor,tam);
         }
         do{
